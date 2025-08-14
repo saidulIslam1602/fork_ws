@@ -1,0 +1,226 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="forklift">
+    <static>false</static>
+
+    <!-- Main robot body: rename 'chassis' to 'base_link' -->
+    <link name="base_link">
+      <!-- Raised above the ground -->
+      <pose>0 0 0.4 0 0 0</pose>
+      <inertial>
+        <mass>40</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>1.6</ixx>  <iyy>3.4</iyy>  <izz>4.2</izz>
+          <ixy>0</ixy>    <ixz>0</ixz>    <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.8 0.6 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.8 0.6 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <!-- Lidar sensor is part of base_link, but publishes data in 'lidar_link' frame -->
+      <sensor name="lidar_sensor" type="ray">
+        <pose>0 0 0.2 0 0 0</pose>
+        <update_rate>10</update_rate>
+        <visualize>true</visualize>
+        <always_on>true</always_on>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>360</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.14159</min_angle>
+              <max_angle>3.14159</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.3</min>
+            <max>20</max>
+            <resolution>0.01</resolution>
+          </range>
+        </ray>
+        <plugin name="lidar_plugin" filename="libgazebo_ros_ray_sensor.so">
+          <ros>
+            <use_sim_time>true</use_sim_time>
+            <remapping>~/out:=scan</remapping>
+          </ros>
+          <output_type>sensor_msgs/LaserScan</output_type>
+          <frame_name>lidar_link</frame_name>
+        </plugin>
+      </sensor>
+
+    </link>
+
+    <!-- Front Left Support Wheel -->
+    <link name="front_left_wheel">
+      <pose>0 -0.2 0.1 1.5708 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Front Right Support Wheel -->
+    <link name="front_right_wheel">
+      <pose>0 0.2 0.1 1.5708 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Steering Link: intermediary link for drive wheel steering -->
+    <link name="steering_link">
+      <pose>-1.47 0 0.1 1.5708 0 0</pose>
+    </link>
+
+    <!-- Rear Drive Wheel -->
+    <link name="drive_wheel">
+      <pose>-1.47 0 0.1 1.5708 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.11</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.11</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Joints: replace 'chassis' with 'base_link' as parent -->
+    <joint name="front_left_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>front_left_wheel</child>
+      <pose>0.0 -0.0 0.0 1.5708 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="front_right_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>front_right_wheel</child>
+      <pose>0.0 0.0 0.0 1.5708 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="steering_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>steering_link</child>
+      <pose>-0.0 0 0.0 1.5708 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+        </limit>
+        <dynamics>
+          <damping>5.5</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <joint name="drive_joint" type="revolute">
+      <parent>steering_link</parent>
+      <child>drive_wheel</child>
+      <pose>-0.0 0 0.0 1.5708 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1000</lower>
+          <upper>1000</upper>
+        </limit>
+        <dynamics>
+          <damping>5.5</damping>
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <plugin name="forklift_controller_plugin" filename="libforklift_controller_plugin.so">
+      <!-- Plugin parameters if needed -->
+    </plugin>
+
+  </model>
+</sdf>

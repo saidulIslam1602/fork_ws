@@ -1,0 +1,15 @@
+slam_toolbox:
+  ros__parameters:
+    use_sim_time: true
+    scan_topic: /scan
+    map_frame: map
+    base_frame: base_link
+    odom_frame: odom
+
+    mode: "mapping"
+    map_file_name: ""
+
+    maxQueueSize: 200  # or bigger
+    transform_publish_period: 0.05    # 20 Hz
+    transform_timeout: 0.5          # Tolerate half-second difference
+    map_update_interval: 0.01

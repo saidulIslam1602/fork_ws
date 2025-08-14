@@ -1,0 +1,22 @@
+<package format="3">
+  <name>harmonic_sim</name>
+  <version>0.0.0</version>
+  <description>Forklift and harmonic simulation</description>
+
+  <maintainer email="your.email@example.com">Your Name</maintainer>
+  <license>Apache-2.0</license>
+
+  <!-- Add std_msgs dependency -->
+  <depend>std_msgs</depend>
+  <depend>rclcpp</depend>
+  <depend>gazebo_ros</depend>
+  <depend>gazebo</depend>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+    <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
+</package>
+

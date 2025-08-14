@@ -1,0 +1,260 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="forklift">
+    <static>false</static>
+
+	
+    <!-- Chassis -->
+    <link name="chassis">
+      <!-- Chassis is raised above the ground -->
+      <pose>0 0 0.4 0 0 0</pose>
+        
+        <inertial>
+	    <!-- mass in kg -->
+	    <mass>40</mass>
+	    <!-- centre‑of‑mass relative to link frame -->
+	    <pose>0 0 0 0 0 0</pose>
+	    <!-- diagonal inertia of a 0.8 × 0.6 × 0.1 box, ρ≈780 kg/m³ -->
+	    <inertia>
+	      <ixx>1.6</ixx>  <iyy>3.4</iyy>  <izz>4.2</izz>
+	      <ixy>0</ixy>    <ixz>0</ixz>    <iyz>0</iyz>
+	    </inertia>
+	  </inertial>
+      
+      <collision name="collision">
+        <geometry>
+          <box>
+            <!-- Dimensions: length x width x height -->
+            <size>0.8 0.6 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.8 0.6 0.1</size>
+          </box>
+        </geometry>
+      </visual>
+
+    <sensor name="lidar_sensor" type="ray">
+      <!-- Position of the sensor on the robot (x y z roll pitch yaw) -->
+      <pose>0 0 0.2 0 0 0</pose>
+      <update_rate>10</update_rate>               <!-- 10 Hz update rate -->
+      <visualize>true</visualize>                 <!-- Show laser beams in Gazebo GUI -->
+      <always_on>true</always_on>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>               <!-- 360 beams -->
+            <resolution>1</resolution>
+            <min_angle>-3.14159</min_angle>      <!-- -180 degrees -->
+            <max_angle>3.14159</max_angle>       <!-- +180 degrees -->
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.3</min>                        <!-- Minimum range 0.12m -->
+          <max>20</max>                         <!-- Maximum range 3.5m -->
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+
+      <!-- Gazebo ROS plugin for LaserScan output -->
+      <plugin name="lidar_plugin" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <use_sim_time>true</use_sim_time>
+          <remapping>~/out:=scan</remapping>
+        </ros>
+        <!-- Publish sensor data as sensor_msgs/LaserScan (2D) -->
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <!-- Frame ID for the LaserScan message header -->
+        <frame_name>lidar_link</frame_name>
+      </plugin>
+    </sensor>
+
+
+
+    </link>
+
+    <!-- Front Left Support Wheel -->
+    <link name="front_left_wheel">
+      <!-- Placed at x=0.5, y=-0.1; z is chosen so the wheel touches ground -->
+      <pose>0 -0.2 0.1 1.5708 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+            <surface>
+      <friction>
+        <ode>
+          <!-- mu  = primary friction coefficient (tangential to wheel roll direction) -->
+          <!-- mu2 = secondary friction coefficient (lateral friction if there's sideways sliding) -->
+          <mu>1.0</mu>
+          <mu2>1.0</mu2>
+        </ode>
+      </friction>
+    </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Front Right Support Wheel -->
+    <link name="front_right_wheel">
+      <!-- Placed at x=0.5, y=0.1 -->
+      <pose>0 0.2 0.1 1.5708 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+            <surface>
+      <friction>
+        <ode>
+          <!-- mu  = primary friction coefficient (tangential to wheel roll direction) -->
+          <!-- mu2 = secondary friction coefficient (lateral friction if there's sideways sliding) -->
+          <mu>1.0</mu>
+          <mu2>1.0</mu2>
+        </ode>
+      </friction>
+    </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.1</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Steering Link: intermediary link for drive wheel steering -->
+    <link name="steering_link">
+      <!-- Positioned at the same location as the drive wheel connection -->
+      <pose>-1.47 0 0.1 1.5708 0 0</pose>
+    </link>
+
+    <!-- Rear Drive Wheel -->
+    <link name="drive_wheel">
+      <!-- Also at x=-0.1, y=0 -->
+      <pose>-1.47 0 0.1 1.5708 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.11</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+            <surface>
+      <friction>
+        <ode>
+          <!-- mu  = primary friction coefficient (tangential to wheel roll direction) -->
+          <!-- mu2 = secondary friction coefficient (lateral friction if there's sideways sliding) -->
+          <mu>1.0</mu>
+          <mu2>1.0</mu2>
+        </ode>
+      </friction>
+    </surface>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.11</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Joints -->
+
+    <!-- Fixed joints for front support wheels -->
+<joint name="front_left_joint" type="revolute">
+  <parent>chassis</parent>
+  <child>front_left_wheel</child>
+  <pose>0.0 -0.0 0.0 1.5708 0 0</pose>
+  <axis>
+    <!-- If the wheel’s axle is along Y (after the 1.5708 rad rotation), use 0 1 0 -->
+    <xyz>0 1 0</xyz>
+    <limit>
+      <lower>-1000</lower>
+      <upper>1000</upper>
+    </limit>
+  </axis>
+</joint>
+<joint name="front_right_joint" type="revolute">
+  <parent>chassis</parent>
+  <child>front_right_wheel</child>
+  <pose>0.0 0.0 0.0 1.5708 0 0</pose>
+  <axis>
+    <xyz>0 1 0</xyz>
+    <limit>
+      <lower>-1000</lower>
+      <upper>1000</upper>
+    </limit>
+  </axis>
+</joint>
+
+
+    <!-- Steering Joint: allows the steering link (and drive wheel) to rotate about the vertical (z) axis -->
+<joint name="steering_joint" type="revolute">
+  <parent>chassis</parent>
+  <child>steering_link</child>
+  <pose>-0.0 0 0.0 1.5708 0 0</pose>
+  <axis>
+    <xyz>0 0 1</xyz>
+    <limit>
+      <lower>-1000</lower>
+      <upper>1000</upper>
+    </limit>
+    <!-- Add dynamics here -->
+    <dynamics>
+      <!-- Increase damping as needed to reduce free spin -->
+      <damping>5.5</damping>
+      <!-- Add friction if desired (like Coulomb friction) -->
+      <friction>0.0</friction>
+    </dynamics>
+  </axis>
+</joint>
+
+    <!-- Drive Joint: rotates the drive wheel about the lateral (y) axis for forward/backward motion -->
+    <joint name="drive_joint" type="revolute">
+      <parent>steering_link</parent>
+      <child>drive_wheel</child>
+      <pose>-0.0 0 0.0 1.5708 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <!-- Limits set very wide so that wheel rotation is unrestricted -->
+          <lower>-1000</lower>
+          <upper>1000</upper>
+        </limit>
+          <dynamics>
+          <!-- Increase damping as needed to reduce free spin -->
+          <damping>5.5</damping>
+          <!-- Add friction if desired (like Coulomb friction) -->
+          <friction>0.0</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+
+  <plugin name="forklift_controller_plugin" filename="libforklift_controller_plugin.so">
+  <!-- Optional: plugin parameters can be added here if needed -->
+</plugin>
+
+  </model>
+
+</sdf>

@@ -1,0 +1,61 @@
+cd ~/fork_ws
+colcon build
+source install/setup.bash
+export GAZEBO_MODEL_PATH=~/fork_ws/src/harmonic_sim/models:$GAZEBO_MODEL_PATH
+
+export GAZEBO_MODEL_PATH=$HOME/fork_ws/rolog/src/harmonic_sim/models
+
+
+Starte simulering: 
+gazebo --verbose ~/fork_ws/src/harmonic_sim/worlds/harmonic.world
+
+######################################################################
+# When project is copied, must change the path for the mesh: 
+# in the file which is in the harmonic_sim/models/forklift/model.sdf:
+        <geometry>
+          <mesh>
+            <!-- use package:// or model:// once the mesh is installed; file:// is fine for testing -->
+            <!-- kina_body_1_0_simple.stl kina_body_1_1.stl -->
+            <uri>file:///home/fork/fork_ws/src/harmonic_sim/meshes/kina_body_1_0_simple.stl</uri> 
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+
+######################################################################
+# Starte simulering med SLAM
+ros2 launch harmonic_sim forklift_sim.launch.py
+For å lagre kart:
+ros2 run nav2_map_server map_saver_ctli -f ~/my_map
+
+# Navigation
+ros2 launch harmonic_sim nav_forklift.launch.py
+
+
+######################################################################
+
+ros2 topic echo /cmd_vel
+
+ros2 run fork_kinematics inverse_kinematics_node.py
+ros2 run fork_kinematics forward_kinematics_node.py
+ros2 run fork_kinematics simple_cmdvel_gui.py
+
+
+####################################################################### 
+# For å fo camera view: 
+ros2 run rqt_image_view rqt_image_view
+
+# For å se alle ROS2 noder: 
+ros2 run rqt_graph rqt_graph
+
+# To run Rviz2
+rviz2 --ros-args -p use_sim_time:=true
+
+
+ros2 launch slam_toolbox online_async_launch.py params_file:=/home/ubuntu/ros2_ws/src/harmonic_sim/config/slam_params.yaml
+
+
+# Make the script executable
+chmod +x my_script.py
+
+
+
+

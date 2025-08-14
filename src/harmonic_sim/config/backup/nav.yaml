@@ -1,0 +1,110 @@
+amcl:
+  ros__parameters:
+    use_sim_time: true
+    base_frame_id: base_link
+    odom_frame_id: odom
+    global_frame_id: map
+    scan_topic: scan
+    min_particle_limit: 500
+    max_particle_limit: 2000
+    # ... plus any additional AMCL params
+
+map_server:
+  ros__parameters:
+    use_sim_time: true
+    yaml_filename: /path/to/your_map.yaml
+    frame_id: map
+
+planner_server:
+  ros__parameters:
+    use_sim_time: true
+    planner_plugins: ["GridBased"]
+    GridBased:
+      plugin: "nav2_navfn_planner/NavfnPlanner"
+      # Minimal NavFn parameters; add more if needed
+      tolerance: 0.5
+      use_astar: false
+      allow_unknown: true
+
+controller_server:
+  ros__parameters:
+    use_sim_time: true
+    controller_frequency: 20.0
+
+    # The local planner plugin(s) to load:
+    controller_plugins: ["SuperFollow"]
+
+    SuperFollow:
+      plugin: "dwb_core::DWBLocalPlanner"
+
+      # **Critics** are essential for DWB:
+      critics: ["RotateToGoal", "Oscillation", "BaseObstacle", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
+
+      # Example velocity/acceleration limits (tweak for your robot):
+      min_vel_x: 0.0
+      max_vel_x: 0.2
+      max_vel_theta: 1.0
+      min_speed_xy: 0.0
+      min_speed_theta: 0.0
+      acc_lim_x: 0.2
+      acc_lim_theta: 0.5
+
+      # Example scoring scalesccc
+      BaseObstacle.scale: 0.02
+      GoalAlign.scale: 24.0
+      PathAlign.scale: 32.0
+      PathDist.scale: 32.0
+      GoalDist.scale: 24.0
+
+# --- Global Costmap ---
+global_costmap:
+  ros__parameters:
+    use_sim_time: true
+    global_frame: map
+    robot_base_frame: base_link
+    resolution: 0.05
+    size_x: 50
+    size_y: 50
+    origin_x: 0.0
+    origin_y: 0.0
+    plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
+
+    static_layer:
+      plugin: "nav2_costmap_2d::StaticLayer"
+      map_subscribe_transient_local: True
+
+    obstacle_layer:
+      plugin: "nav2_costmap_2d::ObstacleLayer"
+      observation_sources: scan
+      scan:
+        topic: scan
+        max_obstacle_height: 2.0
+        clearing: true
+        marking: true
+
+    inflation_layer:
+      plugin: "nav2_costmap_2d::InflationLayer"
+
+# --- Local Costmap ---
+local_costmap:
+  ros__parameters:
+    use_sim_time: true
+    global_frame: odom
+    robot_base_frame: base_link
+    rolling_window: true
+    width: 10
+    height: 10
+    resolution: 0.05
+    plugins: ["obstacle_layer", "inflation_layer"]
+
+    obstacle_layer:
+      plugin: "nav2_costmap_2d::ObstacleLayer"
+      observation_sources: scan
+      scan:
+        topic: scan
+        max_obstacle_height: 2.0
+        clearing: true
+        marking: true
+
+    inflation_layer:
+      plugin: "nav2_costmap_2d::InflationLayer"
