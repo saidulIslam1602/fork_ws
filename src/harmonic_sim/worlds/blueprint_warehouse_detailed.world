@@ -18169,15 +18169,15 @@
     <!-- =================================================================== -->
     
     <!-- Room 106-TORG INN (Rectangular, 440.7 m²) -->
-    <!-- Position: Directly attached to main warehouse south wall -->
+    <!-- Position: Sharing south wall with main warehouse at y=-55 -->
     <model name="room_106_floor">
       <static>true</static>
-      <pose>-46 -66 0.01 0 0 0</pose>
+      <pose>-46 -67 0.01 0 0 0</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
             <box>
-              <size>16 22 0.02</size>
+              <size>18 24.5 0.02</size>
             </box>
           </geometry>
           <material>
@@ -18188,68 +18188,27 @@
       </link>
     </model>
     
-    <!-- BRIGHT TEST MARKER FOR ROOM 106 -->
-    <model name="room_106_test_marker">
-      <static>true</static>
-      <pose>-46 -66 15 0 0 0</pose>
-      <link name="link">
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>25 25 25</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>1 0 0 1</ambient>
-            <diffuse>1 0 0 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
+  
     
     <!-- Room 106 Walls -->
-    <!-- South Wall -->
-    <model name="room_106_south_wall">
-      <static>true</static>
-      <pose>-46 -77 4 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>16 0.3 8</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>16 0.3 8</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.5 0.5 0.5 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
+    <!-- South wall shared with main warehouse at y=-55 -->
     
     <!-- West Wall -->
     <model name="room_106_west_wall">
       <static>true</static>
-      <pose>-54 -66 4 0 0 0</pose>
+      <pose>-55 -67 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.3 22 8</size>
+              <size>0.3 24.5 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.3 22 8</size>
+              <size>0.3 24.5 8</size>
             </box>
           </geometry>
           <material>
@@ -18263,19 +18222,19 @@
     <!-- East Wall -->
     <model name="room_106_east_wall">
       <static>true</static>
-      <pose>-38 -66 4 0 0 0</pose>
+      <pose>-37 -67 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.3 22 8</size>
+              <size>0.3 24.5 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.3 22 8</size>
+              <size>0.3 24.5 8</size>
             </box>
           </geometry>
           <material>
@@ -18286,16 +18245,67 @@
       </link>
     </model>
 
-    <!-- Room 107-TORG INN (Hexagonal, 480.7 m²) -->
-    <!-- Position: Below Room 101-102 boundary -->
+    <!-- Room 106 North Wall with Door Opening -->
+    <model name="room_106_north_wall_west">
+      <static>true</static>
+      <pose>-51 -54.75 4 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>8 0.3 8</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>8 0.3 8</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="room_106_north_wall_east">
+      <static>true</static>
+      <pose>-40 -54.75 4 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>6 0.3 8</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>6 0.3 8</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Room 107-TORG INN (Left Hexagon, 469.7 m²) -->
+    <!-- Position: Left side of connected hexagonal structure -->
     <model name="room_107_floor">
       <static>true</static>
-      <pose>-22 -72 0.01 0 0 0</pose>
+      <pose>-22 -73 0.01 0 0 0</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
             <box>
-              <size>14 26 0.02</size>
+              <size>26 18 0.02</size>
             </box>
           </geometry>
           <material>
@@ -18306,42 +18316,28 @@
       </link>
     </model>
     
-    <!-- BRIGHT TEST MARKER FOR ROOM 107 -->
-    <model name="room_107_test_marker">
-      <static>true</static>
-      <pose>-22 -68 20 0 0 0</pose>
-      <link name="link">
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>30 30 30</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.7 0.4 0.8 1</ambient>
-            <diffuse>0.7 0.4 0.8 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
     
-    <!-- Room 107 Hexagonal Walls -->
-    <!-- North-West Wall -->
-    <model name="room_107_wall_nw">
+    <!-- Room 107 Hexagonal Walls - Left Hexagon (Shares 3 sides with Room 108) -->
+    <!-- North side connects to main warehouse south wall at y=-55 -->
+    
+    <!-- Room 107 Outer Walls (3 sides) -->
+    
+    <!-- North-West Angled Wall (Outer) -->
+    <model name="room_107_wall_nw_outer">
       <static>true</static>
-      <pose>-29 -65 4 0 0 30</pose>
+      <pose>-30 -64 4 0 0 30</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>8 0.3 8</size>
+              <size>10 0.3 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>8 0.3 8</size>
+              <size>10 0.3 8</size>
             </box>
           </geometry>
           <material>
@@ -18352,22 +18348,22 @@
       </link>
     </model>
     
-    <!-- North-East Wall -->
-    <model name="room_107_wall_ne">
+    <!-- West Vertical Wall (Outer) -->
+    <model name="room_107_wall_w_outer">
       <static>true</static>
-      <pose>-15 -65 4 0 0 -30</pose>
+      <pose>-35 -73 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>8 0.3 8</size>
+              <size>0.3 12 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>8 0.3 8</size>
+              <size>0.3 12 8</size>
             </box>
           </geometry>
           <material>
@@ -18378,100 +18374,22 @@
       </link>
     </model>
     
-    <!-- South-West Wall -->
-    <model name="room_107_wall_sw">
+    <!-- South-West Angled Wall (Outer) -->
+    <model name="room_107_wall_sw_outer">
       <static>true</static>
-      <pose>-29 -79 4 0 0 -30</pose>
+      <pose>-30 -82 4 0 0 -30</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>8 0.3 8</size>
+              <size>10 0.3 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>8 0.3 8</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.5 0.5 0.5 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-    
-    <!-- South-East Wall -->
-    <model name="room_107_wall_se">
-      <static>true</static>
-      <pose>-15 -79 4 0 0 30</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>8 0.3 8</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>8 0.3 8</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.5 0.5 0.5 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-    
-    <!-- West Wall -->
-    <model name="room_107_wall_w">
-      <static>true</static>
-      <pose>-33 -72 4 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>0.3 10 8</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>0.3 10 8</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.5 0.5 0.5 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-    
-    <!-- East Wall -->
-    <model name="room_107_wall_e">
-      <static>true</static>
-      <pose>-11 -72 4 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>0.3 10 8</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>0.3 10 8</size>
+              <size>10 0.3 8</size>
             </box>
           </geometry>
           <material>
@@ -18482,16 +18400,16 @@
       </link>
     </model>
 
-    <!-- Room 108-MIL JOBB STASJON (Hexagonal, 689.4 m²) -->
-    <!-- Position: Below Room 104-105 boundary -->
+    <!-- Room 108-MILJØSTASJON (Right Hexagon, 699.4 m²) -->
+    <!-- Position: Right side of connected hexagonal structure -->
     <model name="room_108_floor">
       <static>true</static>
-      <pose>10 -74 0.01 0 0 0</pose>
+      <pose>6 -73 0.01 0 0 0</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
             <box>
-              <size>18 30 0.02</size>
+              <size>32 18 0.02</size>
             </box>
           </geometry>
           <material>
@@ -18502,23 +18420,107 @@
       </link>
     </model>
     
-    <!-- Room 108 Hexagonal Walls (Larger hexagon) -->
-    <!-- North-West Wall -->
-    <model name="room_108_wall_nw">
+    <!-- Shared Walls Between Room 107 and 108 (3 sides) -->
+    
+    <!-- Shared North-East/North-West Angled Wall -->
+    <model name="rooms_107_108_shared_wall_n">
       <static>true</static>
-      <pose>1 -65 4 0 0 30</pose>
+      <pose>-14 -64 4 0 0 -30</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>12 0.3 8</size>
+              <size>10 0.3 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>12 0.3 8</size>
+              <size>10 0.3 8</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Shared East/West Vertical Wall -->
+    <model name="rooms_107_108_shared_wall_center">
+      <static>true</static>
+      <pose>-9 -73 4 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.3 12 8</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.3 12 8</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Shared South-East/South-West Angled Wall -->
+    <model name="rooms_107_108_shared_wall_s">
+      <static>true</static>
+      <pose>-14 -82 4 0 0 30</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>10 0.3 8</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>10 0.3 8</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Room 108 Hexagonal Walls - Right Hexagon (Shares 3 sides with Room 107) -->
+    <!-- North side connects to main warehouse south wall at y=-55 -->
+    
+    <!-- Room 108 Outer Walls (3 sides) -->
+    
+    <!-- North-East Angled Wall (Outer) -->
+    <model name="room_108_wall_ne_outer">
+      <static>true</static>
+      <pose>18 -64 4 0 0 -30</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>10 0.3 8</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>10 0.3 8</size>
             </box>
           </geometry>
           <material>
@@ -18529,22 +18531,22 @@
       </link>
     </model>
     
-    <!-- North-East Wall -->
-    <model name="room_108_wall_ne">
+    <!-- East Vertical Wall (Outer) -->
+    <model name="room_108_wall_e_outer">
       <static>true</static>
-      <pose>19 -65 4 0 0 -30</pose>
+      <pose>23 -73 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>12 0.3 8</size>
+              <size>0.3 12 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>12 0.3 8</size>
+              <size>0.3 12 8</size>
             </box>
           </geometry>
           <material>
@@ -18555,100 +18557,22 @@
       </link>
     </model>
     
-    <!-- South-West Wall -->
-    <model name="room_108_wall_sw">
+    <!-- South-East Angled Wall (Outer) -->
+    <model name="room_108_wall_se_outer">
       <static>true</static>
-      <pose>1 -83 4 0 0 -30</pose>
+      <pose>18 -82 4 0 0 30</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>12 0.3 8</size>
+              <size>10 0.3 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>12 0.3 8</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.5 0.5 0.5 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-    
-    <!-- South-East Wall -->
-    <model name="room_108_wall_se">
-      <static>true</static>
-      <pose>19 -83 4 0 0 30</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>12 0.3 8</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>12 0.3 8</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.5 0.5 0.5 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-    
-    <!-- West Wall -->
-    <model name="room_108_wall_w">
-      <static>true</static>
-      <pose>-5 -74 4 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>0.3 14 8</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>0.3 14 8</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.5 0.5 0.5 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-    
-    <!-- East Wall -->
-    <model name="room_108_wall_e">
-      <static>true</static>
-      <pose>25 -74 4 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>0.3 14 8</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>0.3 14 8</size>
+              <size>10 0.3 8</size>
             </box>
           </geometry>
           <material>
@@ -18659,16 +18583,16 @@
       </link>
     </model>
 
-    <!-- Room 109-MIL JOBB STASJON LITE (Rectangular, 438.7 m²) -->
+    <!-- Room 109-MILJØSTASJON UTE (Rectangular, 634.7 m²) -->
     <!-- Position: Below Room 105 -->
     <model name="room_109_floor">
       <static>true</static>
-      <pose>50 -70 0.01 0 0 0</pose>
+      <pose>50 -71.25 0.01 0 0 0</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
             <box>
-              <size>18 22 0.02</size>
+              <size>24 26.5 0.02</size>
             </box>
           </geometry>
           <material>
@@ -18683,19 +18607,19 @@
     <!-- South Wall -->
     <model name="room_109_south_wall">
       <static>true</static>
-      <pose>50 -81 4 0 0 0</pose>
+      <pose>50 -84.5 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>18 0.3 8</size>
+              <size>24 0.3 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>18 0.3 8</size>
+              <size>24 0.3 8</size>
             </box>
           </geometry>
           <material>
@@ -18709,19 +18633,19 @@
     <!-- West Wall -->
     <model name="room_109_west_wall">
       <static>true</static>
-      <pose>41 -70 4 0 0 0</pose>
+      <pose>38 -71.25 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.3 22 8</size>
+              <size>0.3 26.5 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.3 22 8</size>
+              <size>0.3 26.5 8</size>
             </box>
           </geometry>
           <material>
@@ -18735,19 +18659,70 @@
     <!-- East Wall -->
     <model name="room_109_east_wall">
       <static>true</static>
-      <pose>59 -70 4 0 0 0</pose>
+      <pose>62 -71.25 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.3 22 8</size>
+              <size>0.3 26.5 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.3 22 8</size>
+              <size>0.3 26.5 8</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Room 109 North Wall with Door Opening -->
+    <model name="room_109_north_wall_west">
+      <static>true</static>
+      <pose>44 -58 4 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>8 0.3 8</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>8 0.3 8</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="room_109_north_wall_east">
+      <static>true</static>
+      <pose>56 -58 4 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>8 0.3 8</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>8 0.3 8</size>
             </box>
           </geometry>
           <material>
