@@ -128,22 +128,22 @@
     
     <!-- EXTERIOR WALLS -->
     <!-- North Wall (segmented with door openings) -->
-    <!-- North Wall Segment 1: West end to Room 101 door -->
+    <!-- North Wall Segment 1: West wall to Room 101 door -->
     <model name="north_wall_1">
       <static>true</static>
-      <pose>-106.25 55 4 0 0 0</pose>
+      <pose>-67.45 55 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>4.5 0.3 8</size>
+              <size>23.5 0.3 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>4.5 0.3 8</size>
+              <size>23.5 0.3 8</size>
             </box>
           </geometry>
           <material>
@@ -157,19 +157,19 @@
     <!-- North Wall Segment 2: Room 101 door to Room 102 door -->
     <model name="north_wall_2">
       <static>true</static>
-      <pose>-83.5 55 4 0 0 0</pose>
+      <pose>-40.75 55 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>20 0.3 8</size>
+              <size>23.1 0.3 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>20 0.3 8</size>
+              <size>23.1 0.3 8</size>
             </box>
           </geometry>
           <material>
@@ -183,19 +183,19 @@
     <!-- North Wall Segment 3: Room 102 door to Room 104 door -->
     <model name="north_wall_3">
       <static>true</static>
-      <pose>-51.5 55 4 0 0 0</pose>
+      <pose>-17.85 55 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>38 0.3 8</size>
+              <size>15.4 0.3 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>38 0.3 8</size>
+              <size>15.4 0.3 8</size>
             </box>
           </geometry>
           <material>
@@ -206,22 +206,22 @@
       </link>
     </model>
     
-    <!-- North Wall Segment 4: Room 104 door to Room 105 center door -->
+    <!-- North Wall Segment 4: Room 104 door to Room 105 door -->
     <model name="north_wall_4">
       <static>true</static>
-      <pose>-25.375 55 4 0 0 0</pose>
+      <pose>3.4 55 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>49.25 0.3 8</size>
+              <size>19.1 0.3 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>49.25 0.3 8</size>
+              <size>19.1 0.3 8</size>
             </box>
           </geometry>
           <material>
@@ -232,22 +232,22 @@
       </link>
     </model>
     
-    <!-- North Wall Segment 5: Room 105 center door to Room 105 east door -->
+    <!-- North Wall Segment 5: Room 105 door to east wall -->
     <model name="north_wall_5">
       <static>true</static>
-      <pose>10 55 4 0 0 0</pose>
+      <pose>64.925 55 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>17 0.3 8</size>
+              <size>17.95 0.3 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>17 0.3 8</size>
+              <size>17.95 0.3 8</size>
             </box>
           </geometry>
           <material>
@@ -258,22 +258,48 @@
       </link>
     </model>
     
-    <!-- North Wall Segment 6: Room 105 east door to east end -->
-    <model name="north_wall_6">
+    <!-- West Wall -->
+    <model name="west_wall">
       <static>true</static>
-      <pose>64.5 55 4 0 0 0</pose>
+      <pose>-79.2 0 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>86 0.3 8</size>
+              <size>0.3 110 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>86 0.3 8</size>
+              <size>0.3 110 8</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- East Wall -->
+    <model name="east_wall">
+      <static>true</static>
+      <pose>73.9 0 4 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.3 110 8</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.3 110 8</size>
             </box>
           </geometry>
           <material>
@@ -285,22 +311,22 @@
     </model>
 
     <!-- South Wall (segmented with door openings) -->
-    <!-- South Wall Segment 1: West end to Room 101 door -->
+    <!-- South Wall Segment 1: West wall to Room 101 door -->
     <model name="south_wall_1">
       <static>true</static>
-      <pose>-106.25 -55 4 0 0 0</pose>
+      <pose>-67.45 -55 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>4.5 0.3 8</size>
+              <size>23.5 0.3 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>4.5 0.3 8</size>
+              <size>23.5 0.3 8</size>
             </box>
           </geometry>
           <material>
@@ -314,19 +340,19 @@
     <!-- South Wall Segment 2: Room 101 door to Room 102 door -->
     <model name="south_wall_2">
       <static>true</static>
-      <pose>-83.5 -55 4 0 0 0</pose>
+      <pose>-40.75 -55 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>20 0.3 8</size>
+              <size>23.1 0.3 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>20 0.3 8</size>
+              <size>23.1 0.3 8</size>
             </box>
           </geometry>
           <material>
@@ -340,19 +366,19 @@
     <!-- South Wall Segment 3: Room 102 door to Room 104 door -->
     <model name="south_wall_3">
       <static>true</static>
-      <pose>-51.5 -55 4 0 0 0</pose>
+      <pose>-17.85 -55 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>38 0.3 8</size>
+              <size>15.4 0.3 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>38 0.3 8</size>
+              <size>15.4 0.3 8</size>
             </box>
           </geometry>
           <material>
@@ -363,22 +389,22 @@
       </link>
     </model>
     
-    <!-- South Wall Segment 4: Room 104 door to Room 105 center door -->
+    <!-- South Wall Segment 4: Room 104 door to Room 105 door -->
     <model name="south_wall_4">
       <static>true</static>
-      <pose>-25.375 -55 4 0 0 0</pose>
+      <pose>3.4 -55 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>49.25 0.3 8</size>
+              <size>19.1 0.3 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>49.25 0.3 8</size>
+              <size>19.1 0.3 8</size>
             </box>
           </geometry>
           <material>
@@ -389,48 +415,22 @@
       </link>
     </model>
     
-    <!-- South Wall Segment 5: Room 105 center door to Room 105 east door -->
+    <!-- South Wall Segment 5: Room 105 door to east wall -->
     <model name="south_wall_5">
       <static>true</static>
-      <pose>10 -55 4 0 0 0</pose>
+      <pose>64.925 -55 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>17 0.3 8</size>
+              <size>17.95 0.3 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>17 0.3 8</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.5 0.5 0.5 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-    
-    <!-- South Wall Segment 6: Room 105 east door to east end -->
-    <model name="south_wall_6">
-      <static>true</static>
-      <pose>64.5 -55 4 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>86 0.3 8</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>86 0.3 8</size>
+              <size>17.95 0.3 8</size>
             </box>
           </geometry>
           <material>
@@ -441,79 +441,28 @@
       </link>
     </model>
 
-    <!-- West Wall (full height) -->
-    <model name="west_wall">
-      <static>true</static>
-      <pose>-108.5 0 4 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>0.3 110 8</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>0.3 110 8</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.5 0.5 0.5 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <!-- East Wall (full height) -->
-    <model name="east_wall">
-      <static>true</static>
-      <pose>108.5 0 4 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>0.3 110 8</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>0.3 110 8</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.5 0.5 0.5 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
 
     <!-- =================================================================== -->
     <!-- ROOM DIVIDERS                                                       -->
     <!-- =================================================================== -->
     
     <!-- Divider between 101-FRYS and 102-KJØL (vertical, with door opening) -->
-    <!-- Divider 101-102 Segment 1: North to door -->
+    <!-- Divider 101-102 Segment 1: North part -->
     <model name="divider_101_102_north">
       <static>true</static>
-      <pose>-27.3 27.5 4 0 0 0</pose>
+      <pose>-27.3 37.25 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.2 55 8</size>
+              <size>0.2 35.5 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.2 55 8</size>
+              <size>0.2 35.5 8</size>
             </box>
           </geometry>
           <material>
@@ -524,22 +473,22 @@
       </link>
     </model>
     
-    <!-- Divider 101-102 Segment 2: Door to south -->
+    <!-- Divider 101-102 Segment 2: South part -->
     <model name="divider_101_102_south">
       <static>true</static>
-      <pose>-27.3 -27.5 4 0 0 0</pose>
+      <pose>-27.3 -37.25 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.2 55 8</size>
+              <size>0.2 35.5 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.2 55 8</size>
+              <size>0.2 35.5 8</size>
             </box>
           </geometry>
           <material>
@@ -551,22 +500,22 @@
     </model>
 
     <!-- Divider between 102-KJØL and 104-TØRRVARE (vertical, with door opening) -->
-    <!-- Divider 102-104 Segment 1: North to door -->
+    <!-- Divider 102-104 Segment 1: North part -->
     <model name="divider_102_104_north">
       <static>true</static>
-      <pose>-8.4 27.5 4 0 0 0</pose>
+      <pose>-8.4 37.25 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.2 55 8</size>
+              <size>0.2 35.5 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.2 55 8</size>
+              <size>0.2 35.5 8</size>
             </box>
           </geometry>
           <material>
@@ -577,22 +526,22 @@
       </link>
     </model>
     
-    <!-- Divider 102-104 Segment 2: Door to south -->
+    <!-- Divider 102-104 Segment 2: South part -->
     <model name="divider_102_104_south">
       <static>true</static>
-      <pose>-8.4 -27.5 4 0 0 0</pose>
+      <pose>-8.4 -37.25 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.2 55 8</size>
+              <size>0.2 35.5 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.2 55 8</size>
+              <size>0.2 35.5 8</size>
             </box>
           </geometry>
           <material>
@@ -604,22 +553,22 @@
     </model>
 
     <!-- Divider between 104-TØRRVARE and 105-TØRRVARE (vertical, with door opening) -->
-    <!-- Divider 104-105 Segment 1: North to door -->
+    <!-- Divider 104-105 Segment 1: North part -->
     <model name="divider_104_105_north">
       <static>true</static>
-      <pose>15.2 27.5 4 0 0 0</pose>
+      <pose>15.2 37.25 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.2 55 8</size>
+              <size>0.2 35.5 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.2 55 8</size>
+              <size>0.2 35.5 8</size>
             </box>
           </geometry>
           <material>
@@ -630,22 +579,22 @@
       </link>
     </model>
     
-    <!-- Divider 104-105 Segment 2: Door to south -->
+    <!-- Divider 104-105 Segment 2: South part -->
     <model name="divider_104_105_south">
       <static>true</static>
-      <pose>15.2 -27.5 4 0 0 0</pose>
+      <pose>15.2 -37.25 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
             <box>
-              <size>0.2 55 8</size>
+              <size>0.2 35.5 8</size>
             </box>
           </geometry>
         </collision>
         <visual name="visual">
           <geometry>
             <box>
-              <size>0.2 55 8</size>
+              <size>0.2 35.5 8</size>
             </box>
           </geometry>
           <material>
