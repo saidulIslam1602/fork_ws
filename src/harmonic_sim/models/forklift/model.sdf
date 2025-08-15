@@ -548,6 +548,32 @@
       <pose>0 0.0 0.0 0 0 0</pose>
     </joint>
 
+    <!-- Left wheel joint for differential drive -->
+    <joint name="left_wheel_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>front_left_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.2</damping>
+          <friction>0.1</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
+    <!-- Right wheel joint for differential drive -->
+    <joint name="right_wheel_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>front_right_wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.2</damping>
+          <friction>0.1</friction>
+        </dynamics>
+      </axis>
+    </joint>
+
     <joint name="steering_joint" type="revolute">
       <parent>base_link</parent>
       <child>steering_link</child>
@@ -582,8 +608,33 @@
       </axis>
     </joint>
 
-    <plugin name="forklift_controller_plugin" filename="libforklift_controller_plugin.so">
-      <!-- Plugin parameters if needed -->
+    <!-- Differential drive plugin for ROS2 navigation -->
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <ros>
+        <namespace>/</namespace>
+        <remapping>cmd_vel:=cmd_vel</remapping>
+        <remapping>odom:=odom</remapping>
+      </ros>
+      
+      <!-- Wheel Information -->
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+      
+      <!-- Kinematics -->
+      <wheel_separation>0.39</wheel_separation>
+      <wheel_diameter>0.2</wheel_diameter>
+      
+      <!-- Limits -->
+      <max_wheel_torque>20</max_wheel_torque>
+      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+      
+      <!-- Output -->
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+      
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>base_link</robot_base_frame>
     </plugin>
 
   </model>

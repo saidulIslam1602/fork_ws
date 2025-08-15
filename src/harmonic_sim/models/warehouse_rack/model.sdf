@@ -1,0 +1,374 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='warehouse_rack'>
+    <static>true</static>
+    
+    <!-- Rack structure - North-South orientation (along Y-axis) -->
+    <!-- Base dimensions: 2.5m wide x 40m long x 8m tall -->
+    
+    <!-- Left vertical posts -->
+    <link name='post_fl_1'>
+      <pose>-1.25 -20 0 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <link name='post_fl_2'>
+      <pose>-1.25 -10 0 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <link name='post_fl_3'>
+      <pose>-1.25 0 0 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <link name='post_fl_4'>
+      <pose>-1.25 10 0 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <link name='post_fl_5'>
+      <pose>-1.25 20 0 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <!-- Right vertical posts -->
+    <link name='post_fr_1'>
+      <pose>1.25 -20 0 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <link name='post_fr_2'>
+      <pose>1.25 -10 0 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <link name='post_fr_3'>
+      <pose>1.25 0 0 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <link name='post_fr_4'>
+      <pose>1.25 10 0 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <link name='post_fr_5'>
+      <pose>1.25 20 0 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.15 0.15 8</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <!-- Horizontal shelf beams at different levels -->
+    <!-- Level 1 (2m height) -->
+    <link name='shelf_1_level1'>
+      <pose>0 0 2 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>2.5 40 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>2.5 40 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <!-- Level 2 (4m height) -->
+    <link name='shelf_1_level2'>
+      <pose>0 0 4 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>2.5 40 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>2.5 40 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <!-- Level 3 (6m height) -->
+    <link name='shelf_1_level3'>
+      <pose>0 0 6 0 0 0</pose>
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>2.5 40 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>2.5 40 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <!-- Cross bracing for stability -->
+    <link name='brace_1'>
+      <pose>0 -15 4 0.785398 0 0</pose>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.05 0.05 3.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <link name='brace_2'>
+      <pose>0 -5 4 -0.785398 0 0</pose>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.05 0.05 3.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <link name='brace_3'>
+      <pose>0 5 4 0.785398 0 0</pose>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.05 0.05 3.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <link name='brace_4'>
+      <pose>0 15 4 -0.785398 0 0</pose>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>0.05 0.05 3.5</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.4 0.4 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <!-- Horizontal support beams -->
+    <link name='beam_bottom'>
+      <pose>0 0 0.5 0 0 0</pose>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>2.5 40 0.05</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.35 0.35 0.35 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <link name='beam_top'>
+      <pose>0 0 7.5 0 0 0</pose>
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>2.5 40 0.05</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.35 0.35 0.35 1</ambient>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

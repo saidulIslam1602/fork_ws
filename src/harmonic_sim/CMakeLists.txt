@@ -1,3 +1,4 @@
+cmake_minimum_required(VERSION 3.5)
 project(harmonic_sim)
 
 if(NOT CMAKE_CXX_STANDARD)

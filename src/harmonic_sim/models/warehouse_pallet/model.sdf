@@ -1,0 +1,230 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='warehouse_pallet'>
+    <static>false</static>
+    
+    <!-- Standard EUR pallet: 1.2m x 0.8m x 0.144m -->
+    <link name='pallet'>
+      <pose>0 0 0.072 0 0 0</pose>
+      
+      <inertial>
+        <mass>25</mass>
+        <inertia>
+          <ixx>0.32</ixx>
+          <iyy>0.65</iyy>
+          <izz>0.96</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>1.2 0.8 0.144</size>
+          </box>
+        </geometry>
+      </collision>
+      
+      <visual name='visual_base'>
+        <geometry>
+          <box>
+            <size>1.2 0.8 0.144</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.5 0.3 0.1 1</ambient>
+        </material>
+      </visual>
+      
+      <!-- Pallet slats detail -->
+      <visual name='slat_1'>
+        <pose>0 -0.3 0.072 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.2 0.1 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.25 0.08 1</ambient>
+        </material>
+      </visual>
+      
+      <visual name='slat_2'>
+        <pose>0 -0.1 0.072 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.2 0.1 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.25 0.08 1</ambient>
+        </material>
+      </visual>
+      
+      <visual name='slat_3'>
+        <pose>0 0.1 0.072 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.2 0.1 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.25 0.08 1</ambient>
+        </material>
+      </visual>
+      
+      <visual name='slat_4'>
+        <pose>0 0.3 0.072 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.2 0.1 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.4 0.25 0.08 1</ambient>
+        </material>
+      </visual>
+      
+      <!-- Pallet feet/blocks -->
+      <visual name='foot_1'>
+        <pose>-0.45 -0.3 -0.05 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.2 0.06 1</ambient>
+        </material>
+      </visual>
+      
+      <visual name='foot_2'>
+        <pose>0 -0.3 -0.05 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.2 0.06 1</ambient>
+        </material>
+      </visual>
+      
+      <visual name='foot_3'>
+        <pose>0.45 -0.3 -0.05 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.2 0.06 1</ambient>
+        </material>
+      </visual>
+      
+      <visual name='foot_4'>
+        <pose>-0.45 0.3 -0.05 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.2 0.06 1</ambient>
+        </material>
+      </visual>
+      
+      <visual name='foot_5'>
+        <pose>0 0.3 -0.05 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.2 0.06 1</ambient>
+        </material>
+      </visual>
+      
+      <visual name='foot_6'>
+        <pose>0.45 0.3 -0.05 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.15 0.15 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.2 0.06 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <!-- Optional: Add boxes/cargo on top of pallet -->
+    <link name='cargo'>
+      <pose>0 0 0.244 0 0 0</pose>
+      
+      <inertial>
+        <mass>100</mass>
+        <inertia>
+          <ixx>5.83</ixx>
+          <iyy>10.83</iyy>
+          <izz>13.33</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      
+      <collision name='collision'>
+        <geometry>
+          <box>
+            <size>1.0 0.6 0.8</size>
+          </box>
+        </geometry>
+      </collision>
+      
+      <visual name='visual'>
+        <geometry>
+          <box>
+            <size>1.0 0.6 0.8</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.6 0.4 0.2 1</ambient>
+        </material>
+      </visual>
+      
+      <!-- Strapping/tape details -->
+      <visual name='strap_horizontal'>
+        <pose>0 0 0.4 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.02 0.62 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.1 1</ambient>
+        </material>
+      </visual>
+      
+      <visual name='strap_vertical'>
+        <pose>0 0 0.4 0 0 1.5708</pose>
+        <geometry>
+          <box>
+            <size>1.02 0.62 0.02</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    
+    <joint name='cargo_joint' type='fixed'>
+      <parent>pallet</parent>
+      <child>cargo</child>
+    </joint>
+  </model>
+</sdf>
