@@ -501,7 +501,7 @@
     <!-- Divider 101-102 Segment 1: North to door -->
     <model name="divider_101_102_north">
       <static>true</static>
-      <pose>-27.3 27.5 4 0 0 0</pose>
+      <pose>-81.5 27.5 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
@@ -527,7 +527,7 @@
     <!-- Divider 101-102 Segment 2: Door to south -->
     <model name="divider_101_102_south">
       <static>true</static>
-      <pose>-27.3 -27.5 4 0 0 0</pose>
+      <pose>-81.5 -27.5 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
@@ -554,7 +554,7 @@
     <!-- Divider 102-104 Segment 1: North to door -->
     <model name="divider_102_104_north">
       <static>true</static>
-      <pose>-8.4 27.5 4 0 0 0</pose>
+      <pose>-72 27.5 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
@@ -580,7 +580,7 @@
     <!-- Divider 102-104 Segment 2: Door to south -->
     <model name="divider_102_104_south">
       <static>true</static>
-      <pose>-8.4 -27.5 4 0 0 0</pose>
+      <pose>-72 -27.5 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
@@ -607,7 +607,7 @@
     <!-- Divider 104-105 Segment 1: North to door -->
     <model name="divider_104_105_north">
       <static>true</static>
-      <pose>15.2 27.5 4 0 0 0</pose>
+      <pose>-39 27.5 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
@@ -633,7 +633,7 @@
     <!-- Divider 104-105 Segment 2: Door to south -->
     <model name="divider_104_105_south">
       <static>true</static>
-      <pose>15.2 -27.5 4 0 0 0</pose>
+      <pose>-39 -27.5 4 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
@@ -663,12 +663,12 @@
     <!-- Room 101-FRYS Floor Marking (2956 m²) -->
     <model name="room_101_floor">
       <static>true</static>
-      <pose>-40.75 0 0.01 0 0 0</pose>
+      <pose>-95 0 0.01 0 0 0</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
             <box>
-              <size>26.9 110 0.02</size>
+              <size>27 55 0.02</size>
             </box>
           </geometry>
           <material>
@@ -682,12 +682,12 @@
     <!-- Room 102-KJØL Floor Marking (2084 m²) -->
     <model name="room_102_floor">
       <static>true</static>
-      <pose>-17.85 0 0.01 0 0 0</pose>
+      <pose>-72 0 0.01 0 0 0</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
             <box>
-              <size>18.9 110 0.02</size>
+              <size>19 55 0.02</size>
             </box>
           </geometry>
           <material>
@@ -701,12 +701,12 @@
     <!-- Room 104-TØRRVARE Floor Marking (2600 m²) -->
     <model name="room_104_floor">
       <static>true</static>
-      <pose>3.4 0 0.01 0 0 0</pose>
+      <pose>-51.5 0 0.01 0 0 0</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
             <box>
-              <size>23.6 110 0.02</size>
+              <size>47 55 0.02</size>
             </box>
           </geometry>
           <material>
@@ -720,12 +720,12 @@
     <!-- Room 105-TØRRVARE Floor Marking (4288 m²) -->
     <model name="room_105_floor">
       <static>true</static>
-      <pose>34.7 0 0.01 0 0 0</pose>
+      <pose>0 0 0.01 0 0 0</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
             <box>
-              <size>39.0 110 0.02</size>
+              <size>78 55 0.02</size>
             </box>
           </geometry>
           <material>
@@ -743,7 +743,7 @@
     <!-- Room 101-FRYS Sign -->
     <model name="sign_101_frys">
       <static>true</static>
-      <pose>-40.75 54 6 0 0 0</pose>
+      <pose>-95 54 6 0 0 0</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
@@ -762,7 +762,7 @@
     <!-- Room 102-KJØL Sign -->
     <model name="sign_102_kjol">
       <static>true</static>
-      <pose>-17.85 54 6 0 0 0</pose>
+      <pose>-72 54 6 0 0 0</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
@@ -781,7 +781,7 @@
     <!-- Room 104-TØRRVARE Sign -->
     <model name="sign_104_torrvare">
       <static>true</static>
-      <pose>3.4 54 6 0 0 0</pose>
+      <pose>-51.5 54 6 0 0 0</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
@@ -800,7 +800,7 @@
     <!-- Room 105-TØRRVARE Sign -->
     <model name="sign_105_torrvare">
       <static>true</static>
-      <pose>34.7 54 6 0 0 0</pose>
+      <pose>0 54 6 0 0 0</pose>
       <link name="link">
         <visual name="visual">
           <geometry>
@@ -899,207 +899,6 @@
     <model name="rack_101_4">
       <static>true</static>
       <pose>-85 -20 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <!-- Additional racks for Room 101 to match blueprint density -->
-    <model name="rack_101_5">
-      <static>true</static>
-      <pose>-101 20 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_101_6">
-      <static>true</static>
-      <pose>-101 -20 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_101_7">
-      <static>true</static>
-      <pose>-97 20 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_101_8">
-      <static>true</static>
-      <pose>-97 -20 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_101_9">
-      <static>true</static>
-      <pose>-93 20 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_101_10">
-      <static>true</static>
-      <pose>-93 -20 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_101_11">
-      <static>true</static>
-      <pose>-89 20 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 35 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_101_12">
-      <static>true</static>
-      <pose>-89 -20 0 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
@@ -1223,107 +1022,6 @@
       </link>
     </model>
 
-    <!-- Additional racks for Room 102 to match blueprint density -->
-    <model name="rack_102_5">
-      <static>true</static>
-      <pose>-74 25 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_102_6">
-      <static>true</static>
-      <pose>-74 -25 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_102_7">
-      <static>true</static>
-      <pose>-70 25 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_102_8">
-      <static>true</static>
-      <pose>-70 -25 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
     <!-- Racks in Room 104-TØRRVARE -->
     <model name="rack_104_1">
       <static>true</static>
@@ -1403,257 +1101,6 @@
     <model name="rack_104_4">
       <static>true</static>
       <pose>-45 -25 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <!-- Additional racks for Room 104 to match blueprint density -->
-    <model name="rack_104_5">
-      <static>true</static>
-      <pose>-62 25 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_104_6">
-      <static>true</static>
-      <pose>-62 -25 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_104_7">
-      <static>true</static>
-      <pose>-54 25 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_104_8">
-      <static>true</static>
-      <pose>-54 -25 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_104_9">
-      <static>true</static>
-      <pose>-50 25 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_104_10">
-      <static>true</static>
-      <pose>-50 -25 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_104_11">
-      <static>true</static>
-      <pose>-46 25 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_104_12">
-      <static>true</static>
-      <pose>-46 -25 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_104_13">
-      <static>true</static>
-      <pose>-42 25 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 40 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_104_14">
-      <static>true</static>
-      <pose>-42 -25 0 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
@@ -1855,207 +1302,6 @@
     <model name="rack_105_8">
       <static>true</static>
       <pose>20 -30 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <!-- Additional racks for Room 105 to match blueprint density -->
-    <model name="rack_105_9">
-      <static>true</static>
-      <pose>30 30 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_105_10">
-      <static>true</static>
-      <pose>30 -30 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_105_11">
-      <static>true</static>
-      <pose>40 30 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_105_12">
-      <static>true</static>
-      <pose>40 -30 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_105_13">
-      <static>true</static>
-      <pose>50 30 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_105_14">
-      <static>true</static>
-      <pose>50 -30 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_105_15">
-      <static>true</static>
-      <pose>60 30 0 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>3 45 6</size>
-            </box>
-          </geometry>
-          <material>
-            <ambient>0.4 0.4 0.4 1</ambient>
-            <diffuse>0.6 0.6 0.6 1</diffuse>
-          </material>
-        </visual>
-      </link>
-    </model>
-
-    <model name="rack_105_16">
-      <static>true</static>
-      <pose>60 -30 0 0 0 0</pose>
       <link name="link">
         <collision name="collision">
           <geometry>
